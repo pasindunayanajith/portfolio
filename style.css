@@ -1,136 +1,98 @@
-/* General Reset and Base Styles */
-:root {
-    --primary-color: #0077b6; /* LinkedIn Blue */
-    --secondary-color: #f1f1f1;
-    --text-color: #333;
-    --white: #ffffff;
-    --max-width: 1100px;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* -------------------------------- */
+/* GENERAL LAYOUT */
+/* -------------------------------- */
 body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--secondary-color);
+    background: #f8fafc;
+    color: #333;
 }
 
 .container {
-    max-width: var(--max-width);
-    margin: 0 auto;
+    max-width: 1100px;
+    margin: auto;
     padding: 20px;
 }
 
-/* Header/Hero Section */
-.hero {
-    background: var(--primary-color);
-    color: var(--white);
-    padding: 50px 20px;
-    text-align: center;
-}
-
-.profile-container {
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-#profile-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid var(--white);
-    transition: transform 0.5s ease-in-out; /* Smooth transition for the swap */
-}
-
-.name {
-    margin-top: 15px;
-    font-size: 2.2em;
-}
-
-.role {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.tagline {
-    font-style: italic;
-    opacity: 0.8;
-}
-
-.contact-links {
-    margin-top: 20px;
-}
-
-.contact-links a {
-    color: var(--white);
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 1.1em;
-    transition: opacity 0.3s;
-}
-
-.contact-links a:hover {
-    opacity: 0.8;
-}
-
-/* Sections */
 .section {
-    background: var(--white);
-    padding: 30px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 60px;
 }
 
 h2 {
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--secondary-color);
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    font-size: 1.8em;
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
 }
 
-h3 {
-    margin-top: 15px;
-    margin-bottom: 10px;
+/* -------------------------------- */
+/* HERO SECTION */
+/* -------------------------------- */
+.hero {
+    background: linear-gradient(135deg, #eaf4ff, #d1e7ff);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.profile-container img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    margin-bottom: 15px;
+}
+
+.name {
+    font-size: 1.9rem;
+    margin-bottom: 5px;
+}
+
+.role,
+.tagline {
+    margin: 5px 0;
     color: #555;
 }
 
-/* Skills Grid */
+.contact-links {
+    margin-top: 15px;
+}
+
+.contact-links a {
+    display: inline-block;
+    margin: 8px;
+    padding: 8px 14px;
+    text-decoration: none;
+    border-radius: 6px;
+    background: #3498db;
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* -------------------------------- */
+/* SKILLS */
+/* -------------------------------- */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 1fr;
     gap: 20px;
 }
 
+.skill-category h3 {
+    margin-bottom: 10px;
+}
+
 .skill-category ul {
-    list-style: none;
-    padding-left: 0;
+    padding-left: 20px;
 }
 
-.skill-category li {
-    background: var(--secondary-color);
-    padding: 8px 15px;
-    margin-bottom: 8px;
-    border-radius: 4px;
-}
-
-/* Video Embeds */
+/* -------------------------------- */
+/* VIDEO RESPONSIVENESS */
+/* -------------------------------- */
 .video-container {
-    position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
     height: 0;
-    margin-top: 20px;
-    border-radius: 8px;
-    overflow: hidden;
 }
 
 .video-container iframe {
@@ -139,33 +101,121 @@ h3 {
     left: 0;
     width: 100%;
     height: 100%;
+    border: none;
 }
 
-/* Footer */
-footer {
-    text-align: center;
+/* -------------------------------- */
+/* PROJECT SECTION */
+/* -------------------------------- */
+.project-section {
+    background: #eef3f8;
+    padding: 40px 20px;
+    border-radius: 12px;
+}
+
+.project-overview {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech-item {
+    background: #3498db;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+}
+
+.overview-visual {
+    background: white;
     padding: 20px;
-    background: var(--text-color);
-    color: var(--white);
-    font-size: 0.9em;
+    border-radius: 10px;
+    text-align: center;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .hero {
-        padding: 40px 10px;
+/* -------------------------------- */
+/* FEATURE GRID */
+/* -------------------------------- */
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.feature-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* -------------------------------- */
+/* RESULTS GRID */
+/* -------------------------------- */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.result-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.result-value {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #3498db;
+}
+
+/* -------------------------------- */
+/* FOOTER */
+/* -------------------------------- */
+footer {
+    background: #2c3e50;
+    padding: 15px;
+    text-align: center;
+    color: white;
+}
+
+/* -------------------------------- */
+/* RESPONSIVE BREAKPOINTS */
+/* -------------------------------- */
+
+/* TABLET */
+@media (min-width: 768px) {
+
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 
-    .name {
-        font-size: 1.8em;
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .role {
-        font-size: 1em;
+    .project-overview {
+        flex-direction: row;
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+
+    .features-grid {
+        grid-template-columns: repeat(4, 1fr);
     }
 
-    .contact-links a {
-        display: block;
-        margin: 10px 0;
+    .results-grid {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
